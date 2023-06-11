@@ -1,11 +1,12 @@
 from http.server import BaseHTTPRequestHandler
+
+ 
 class handler(BaseHTTPRequestHandler):
  
   def do_GET(self):
     self.send_response(200)
-    self.send_header('Content-type', 'text/plain')# mata data
+    self.send_header('Content-type', 'text/plain')
     self.end_headers()
-    mas='welcome to pyton'
-    self.wfile.write(mas.encode())# encode its kind of scurity 
-    #  fas => function as server 
+    message = "Welcome to Python course"
+    self.wfile.write(message.encode())
     return
