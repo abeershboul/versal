@@ -10,9 +10,13 @@ class handler(BaseHTTPRequestHandler):
      
     #  fas => function as server 
     s = self.path
+    print(s)
     url_components = parse.urlsplit(s)
+    print('111',url_components)
     query_strings_list = parse.parse_qsl(url_components.query)
+    print('2222',query_strings_list)
     dic = dict(query_strings_list)
+    print(dic)
     country = dic.get("country")
     capital = dic.get("capital")
 
